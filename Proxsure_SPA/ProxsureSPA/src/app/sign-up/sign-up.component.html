@@ -1,0 +1,38 @@
+<div class="example-container">
+  <form [formGroup]="signUpForm" (ngSubmit)=OnSubmit()>
+    <mat-form-field>
+      <input matInput placeholder="First Name" formControlName="firstNameFormControl" type="text" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Last Name" formControlName="lastNameFormControl" type="text" v>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Username" formControlName="usernameFormControl" type="text" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Email" formControlName="emailFormControl" type="email" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Password" formControlName="passwordFormControl" type="password" required minlength="6">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Re-Type Password" formControlName="reTypePasswordFormControl" type="password" required>
+      <mat-error *ngIf="signUpForm.controls.reTypePasswordFormControl.errors?.MatchPassword">Password does not match</mat-error>
+      </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Suscription Type">
+        <mat-option value="option">Option</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <div>
+        <button mat-stroked-button type="submit" [disabled]="!signUpForm.valid">Sign Up</button>
+    </div>
+  </form>
+</div>

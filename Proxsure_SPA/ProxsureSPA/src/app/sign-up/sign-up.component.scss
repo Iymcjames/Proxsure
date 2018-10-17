@@ -1,0 +1,42 @@
+.backgroundDiv {
+  position: relative;
+  // background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), url("../../assets/Vendors/img/glenn-carstens-peters-190592-unsplash.jpg");
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  padding: 15% 35%;
+}
+
+mat-form-field {
+  width: 100%;
+
+  // background-color:rgba(255,255,255,0.25);
+
+  input {
+      padding-left: 10px;
+      //color: white;
+  }
+
+  select {
+      display: block;
+  }
+}
+
+button {
+  margin-left: 35%;
+}
+
+.example-container {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  padding: 15% 35%;
+  display: flex;
+  flex-direction: column;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.05)), url("../../assets/Vendors/img/glenn-carstens-peters-190592-unsplash.jpg");
+
+}
+
+.example-container > * {
+  width: 100%;
+}

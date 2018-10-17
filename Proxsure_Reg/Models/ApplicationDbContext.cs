@@ -11,6 +11,7 @@ namespace Proxsure_Reg.Models
         }
 
         public DbSet<Mentee> Mentees { get; set; }
+        public DbSet<Mentor> Mentors { get; set; }
         
     }
 }

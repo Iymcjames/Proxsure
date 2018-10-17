@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -28,11 +30,17 @@ namespace Proxsure_Reg {
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+          services.AddAutoMapper();
+
             // Add framework services.
             services.AddDbContext<ApplicationDbContext> (options =>
                 options.UseSqlServer (Configuration.GetConnectionString ("Reg"),
                     b => b.MigrationsAssembly ("Proxsure_Reg")));
             services.AddMvc ().SetCompatibilityVersion (CompatibilityVersion.Version_2_1);
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+            .AddEntityFrameworkStores<ApplicationDbContext>()
+            .AddDefaultTokenProviders();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

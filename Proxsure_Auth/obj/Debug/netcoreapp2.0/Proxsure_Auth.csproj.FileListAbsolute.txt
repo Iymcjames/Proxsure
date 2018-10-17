@@ -1,0 +1,11 @@
+/Users/iyanuakenroye/Developer/Projects/Proxsure/Proxsure_Auth/bin/Debug/netcoreapp2.0/Proxsure_Auth.deps.json
+/Users/iyanuakenroye/Developer/Projects/Proxsure/Proxsure_Auth/bin/Debug/netcoreapp2.0/Proxsure_Auth.runtimeconfig.json
+/Users/iyanuakenroye/Developer/Projects/Proxsure/Proxsure_Auth/bin/Debug/netcoreapp2.0/Proxsure_Auth.runtimeconfig.dev.json
+/Users/iyanuakenroye/Developer/Projects/Proxsure/Proxsure_Auth/bin/Debug/netcoreapp2.0/Proxsure_Auth.dll
+/Users/iyanuakenroye/Developer/Projects/Proxsure/Proxsure_Auth/bin/Debug/netcoreapp2.0/Proxsure_Auth.pdb
+/Users/iyanuakenroye/Developer/Projects/Proxsure/Proxsure_Auth/obj/Debug/netcoreapp2.0/Proxsure_Auth.csprojAssemblyReference.cache
+/Users/iyanuakenroye/Developer/Projects/Proxsure/Proxsure_Auth/obj/Debug/netcoreapp2.0/Proxsure_Auth.csproj.CoreCompileInputs.cache
+/Users/iyanuakenroye/Developer/Projects/Proxsure/Proxsure_Auth/obj/Debug/netcoreapp2.0/Proxsure_Auth.AssemblyInfoInputs.cache
+/Users/iyanuakenroye/Developer/Projects/Proxsure/Proxsure_Auth/obj/Debug/netcoreapp2.0/Proxsure_Auth.AssemblyInfo.cs
+/Users/iyanuakenroye/Developer/Projects/Proxsure/Proxsure_Auth/obj/Debug/netcoreapp2.0/Proxsure_Auth.dll
+/Users/iyanuakenroye/Developer/Projects/Proxsure/Proxsure_Auth/obj/Debug/netcoreapp2.0/Proxsure_Auth.pdb
