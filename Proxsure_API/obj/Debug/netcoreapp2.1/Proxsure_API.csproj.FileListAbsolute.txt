@@ -1,0 +1,14 @@
+/Users/iyanuakenroye/Developer/Projects/Proxsure/Proxsure_API/bin/Debug/netcoreapp2.1/Proxsure_API.deps.json
+/Users/iyanuakenroye/Developer/Projects/Proxsure/Proxsure_API/bin/Debug/netcoreapp2.1/Proxsure_API.runtimeconfig.json
+/Users/iyanuakenroye/Developer/Projects/Proxsure/Proxsure_API/bin/Debug/netcoreapp2.1/Proxsure_API.runtimeconfig.dev.json
+/Users/iyanuakenroye/Developer/Projects/Proxsure/Proxsure_API/bin/Debug/netcoreapp2.1/Proxsure_API.dll
+/Users/iyanuakenroye/Developer/Projects/Proxsure/Proxsure_API/bin/Debug/netcoreapp2.1/Proxsure_API.pdb
+/Users/iyanuakenroye/Developer/Projects/Proxsure/Proxsure_API/obj/Debug/netcoreapp2.1/Proxsure_API.csprojAssemblyReference.cache
+/Users/iyanuakenroye/Developer/Projects/Proxsure/Proxsure_API/obj/Debug/netcoreapp2.1/Proxsure_API.csproj.CoreCompileInputs.cache
+/Users/iyanuakenroye/Developer/Projects/Proxsure/Proxsure_API/obj/Debug/netcoreapp2.1/Proxsure_API.RazorAssemblyInfo.cache
+/Users/iyanuakenroye/Developer/Projects/Proxsure/Proxsure_API/obj/Debug/netcoreapp2.1/Proxsure_API.RazorAssemblyInfo.cs
+/Users/iyanuakenroye/Developer/Projects/Proxsure/Proxsure_API/obj/Debug/netcoreapp2.1/Proxsure_API.AssemblyInfoInputs.cache
+/Users/iyanuakenroye/Developer/Projects/Proxsure/Proxsure_API/obj/Debug/netcoreapp2.1/Proxsure_API.AssemblyInfo.cs
+/Users/iyanuakenroye/Developer/Projects/Proxsure/Proxsure_API/obj/Debug/netcoreapp2.1/Proxsure_API.RazorTargetAssemblyInfo.cache
+/Users/iyanuakenroye/Developer/Projects/Proxsure/Proxsure_API/obj/Debug/netcoreapp2.1/Proxsure_API.dll
+/Users/iyanuakenroye/Developer/Projects/Proxsure/Proxsure_API/obj/Debug/netcoreapp2.1/Proxsure_API.pdb
