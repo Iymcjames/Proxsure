@@ -29,7 +29,8 @@ export class SignUpComponent implements OnInit {
      usernameFormControl : ['', Validators.required],
       emailFormControl : ['', [Validators.required, Validators.email]],
       passwordFormControl : ['', [Validators.required, Validators.minLength(6)]],
-      reTypePasswordFormControl : ['', [Validators.required]]
+      reTypePasswordFormControl : ['', [Validators.required]],
+      suscriptionTypeFormControl : ['']
      },
      {
       validator: PasswordValidation.MatchPassword
@@ -38,12 +39,6 @@ export class SignUpComponent implements OnInit {
 
   }
 
-  checkPasswords(group: AbstractControl) { // here we have the 'passwords' group
-  const pass = group.get('passwordFormControl').value;
-  const confirmPass = group.get('reTypePasswordFormControl').value;
-
-  return pass === confirmPass ? null : group.get('reTypePasswordFormControl').setErrors( {MatchPassword: true} );
-}
 
   ngOnInit() {
     this.newSignUpUser = new User();
