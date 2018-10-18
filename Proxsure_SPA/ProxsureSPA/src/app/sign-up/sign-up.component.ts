@@ -17,9 +17,9 @@ export class SignUpComponent implements OnInit {
   confirmationMessage: string;
 
   suscriptionDropDown: SuscriptionDropDown[] = [
-    {value: 'basic', display: 'Basic'},
-    {value: 'intermediate', display: 'Intermediate'},
-    {value: 'professional', display: 'Professional'},
+    {value: 1, display: 'Basic'},
+    {value: 2, display: 'Intermediate'},
+    {value: 3, display: 'Professional'},
   ];
 
 
@@ -31,7 +31,7 @@ export class SignUpComponent implements OnInit {
       email : ['', [Validators.required, Validators.email]],
       password : ['', [Validators.required, Validators.minLength(6)]],
       reTypePassword : ['', [Validators.required]],
-      suscriptionType : ['']
+      suscriptionId: ['']
      },
      {
       validator: PasswordValidation.MatchPassword
@@ -61,7 +61,7 @@ this.newSignUpUser = null;
 }
 
 export interface SuscriptionDropDown {
-  value: string;
+  value: number;
   display: string;
 }
 

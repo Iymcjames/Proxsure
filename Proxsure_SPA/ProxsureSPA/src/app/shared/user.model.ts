@@ -4,5 +4,6 @@ export class User {
   username: string;
   email: string;
   password: string;
-  suscriptionType: string;
+  suscriptionId: number;
+  profileUrl: string;
 }
