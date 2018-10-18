@@ -1,3 +1,4 @@
+import { UserService } from './../shared/user.service';
 import { Component, OnInit } from '@angular/core';
 import { NgForm, NgModel, FormControl, Validators, FormGroup, FormGroupDirective, AbstractControl, FormBuilder } from '@angular/forms';
 import { User} from '../shared/user.model';
@@ -22,15 +23,15 @@ export class SignUpComponent implements OnInit {
   ];
 
 
-  constructor(public fb: FormBuilder) {
+  constructor(public fb: FormBuilder, public userService: UserService) {
     this.signUpForm = this.fb.group({
-      firstNameFormControl: ['', Validators.required],
-      lastNameFormControl : ['', Validators.required],
-     usernameFormControl : ['', Validators.required],
-      emailFormControl : ['', [Validators.required, Validators.email]],
-      passwordFormControl : ['', [Validators.required, Validators.minLength(6)]],
-      reTypePasswordFormControl : ['', [Validators.required]],
-      suscriptionTypeFormControl : ['']
+      firstName: ['', Validators.required],
+      lastName : ['', Validators.required],
+     username : ['', Validators.required],
+      email : ['', [Validators.required, Validators.email]],
+      password : ['', [Validators.required, Validators.minLength(6)]],
+      reTypePassword : ['', [Validators.required]],
+      suscriptionType : ['']
      },
      {
       validator: PasswordValidation.MatchPassword
@@ -47,7 +48,8 @@ export class SignUpComponent implements OnInit {
   }
 
   OnSubmit() {
-    console.warn(this.signUpForm.value);
+    console.log(this.signUpForm.value);
+this.userService.createUser(this.signUpForm.value);
   }
 
   resetForm(form?: NgForm) {
