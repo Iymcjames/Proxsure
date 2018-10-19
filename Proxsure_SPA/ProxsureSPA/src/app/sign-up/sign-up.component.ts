@@ -1,3 +1,4 @@
+import { SuscriptionService } from './../Admin/Suscription/suscription.service';
 import { Suscription } from './../Admin/Suscription/suscription.model';
 import { UserService } from './../shared/user.service';
 import { Component, OnInit } from '@angular/core';
@@ -25,8 +26,13 @@ export class SignUpComponent implements OnInit {
   signUpForm: FormGroup;
   newSignUpUser: User;
   confirmationMessage: string;
-
-  constructor(public fb: FormBuilder, public userService: UserService) {
+suscriptions: Suscription[];
+  constructor(
+    public fb: FormBuilder,
+    public userService: UserService,
+    public suscriptionService: SuscriptionService
+  ) {
+    this.newSignUpUser = new User();
     this.signUpForm = this.fb.group(
       {
         firstName: ['', Validators.required],
@@ -44,9 +50,15 @@ export class SignUpComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.newSignUpUser = new User();
-    this.confirmationMessage = '';
     this.resetForm();
+    this.GetSuscriptions();
+  }
+
+  GetSuscriptions() {
+    this.suscriptionService.getSuscriptions()
+    .subscribe((response) => {
+      this.suscriptions = <Suscription[]>response;
+    });
   }
 
   OnSubmit() {
@@ -61,8 +73,6 @@ export class SignUpComponent implements OnInit {
     this.newSignUpUser = null;
   }
 }
-
-
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
   isErrorState(

@@ -7,3 +7,6 @@ export class AuthService {
 
   constructor() { }
 }
+
+
+export const apiRootUrl = 'https://localhost/5001';

@@ -27,7 +27,7 @@
 
     <mat-form-field>
       <mat-select placeholder="Suscription Type" formControlName="suscriptionType">
-        <mat-option *ngFor="let sus of suscriptionDropDown" [value]="sus.value">{{sus.display}}</mat-option>
+        <mat-option *ngFor="let sus of suscriptions" [value]="sus.id">{{sus.name}}</mat-option>
       </mat-select>
     </mat-form-field>
 
