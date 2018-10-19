@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Proxsure_API.Models.Suscriptions;
+using Proxsure_API.Models.SuscriptionModels;
 //using Proxsure_API.Models;
 
 namespace Proxsure_API.Controllers {
@@ -17,13 +17,13 @@ namespace Proxsure_API.Controllers {
 
         // GET api/suscription
         [HttpGet ("")]
-        public async Task<IActionResult> Gets () {
-            return Ok(await suscriptionRepository.GetAllSuscriptions());
+        public async Task<IActionResult> GetSuscriptions () {
+           return Ok(await suscriptionRepository.GetAllSuscriptions());
         }
 
         // GET api/suscription/5
         [HttpGet ("{id}")]
-        public ActionResult<string> GetById (int id) {
+        public ActionResult<string> GetSuscriptionById (int id) {
             return "value" + id;
         }
 

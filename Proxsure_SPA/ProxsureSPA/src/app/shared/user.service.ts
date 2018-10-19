@@ -21,8 +21,11 @@ this.user = {
    lastName: userValue.lastName,
    username : userValue.username,
    password: userValue.password,
-  suscriptionType: userValue.suscriptionType
+   suscriptionStartDate: userValue.suscriptionStartDate,
+   suscriptionExpirydate: userValue.suscriptionExpirydate,
+   profileUrl: userValue.profileUrl,
+  suscriptionId: userValue.suscriptionId
 };
-return this.httpClient.post()
+return this.httpClient.post('', this.user);
    }
 }

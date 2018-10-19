@@ -1,6 +1,6 @@
 using System;
 using Microsoft.AspNetCore.Identity;
-using Proxsure_API.Models.Suscriptions;
+using Proxsure_API.Models.SuscriptionModels;
 
 namespace Proxsure_API.Models.Users
 {
@@ -9,7 +9,7 @@ namespace Proxsure_API.Models.Users
         public string firstName { get; set; }
         public string lastName { get; set; }
         public int suscriptionId { get; set; }
-        public virtual Suscription Suscription {get; set;}
+       public virtual Suscription Suscription {get; set;}
 
         public DateTime Sus_StartDate { get; set; }
 

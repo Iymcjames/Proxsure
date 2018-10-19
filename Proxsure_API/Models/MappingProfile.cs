@@ -1,5 +1,5 @@
 using AutoMapper;
-using Proxsure_API.Models.Suscriptions;
+using Proxsure_API.Models.SuscriptionModels;
 
 namespace Proxsure_API.Models
 {

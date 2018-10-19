@@ -1,6 +1,4 @@
-using System;
-
-namespace Proxsure_API.Models.Users {
+namespace Proxsure_API.Models.SuscriptionModels {
     public class Suscription {
         public int Id { get; set; }
         public string Name { get; set; }

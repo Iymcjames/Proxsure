@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using Proxsure_API.Models.Suscriptions;
+using Proxsure_API.Models.SuscriptionModels;
 using Proxsure_API.Models.Users;
 
 
