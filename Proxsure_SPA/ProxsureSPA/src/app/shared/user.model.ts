@@ -1,3 +1,5 @@
+import { Suscription } from '../Admin/Suscription/suscription.model';
+
 export class User {
   firstName: string;
   lastName: string;
@@ -6,4 +8,6 @@ export class User {
   password: string;
   suscriptionId: number;
   profileUrl: string;
+  suscriptionStartDate: Date;
+  suscriptionExpirydate: Date;
 }

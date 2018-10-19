@@ -1,0 +1,14 @@
+<form >
+  <mat-form-field>
+    <Input matInput placeholder="Suscription Name" [(ngModel)]="theSuscription.name">
+  </mat-form-field>
+  <mat-form-field>
+    <Input matInput placeholder="Suscription Price" [(ngModel)]="theSuscription.price">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-select placeholder="Suscription Duration" [(ngModel)]="theSuscription.duration">
+      <mat-option value="monthly">Monthly</mat-option>
+      <mat-option value="yearly">Yearly</mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>

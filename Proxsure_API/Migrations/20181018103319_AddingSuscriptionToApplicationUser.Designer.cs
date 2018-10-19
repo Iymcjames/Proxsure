@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Proxsure_API.Models.Context;
 
 namespace Proxsure_API.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181018103319_AddingSuscriptionToApplicationUser")]
+    partial class AddingSuscriptionToApplicationUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -162,8 +164,6 @@ namespace Proxsure_API.Migrations
 
                     b.Property<string>("SecurityStamp");
 
-                    b.Property<DateTime>("Sus_StartDate");
-
                     b.Property<bool>("TwoFactorEnabled");
 
                     b.Property<string>("UserName")
@@ -203,6 +203,8 @@ namespace Proxsure_API.Migrations
                     b.Property<string>("Name");
 
                     b.Property<decimal>("Price");
+
+                    b.Property<DateTime>("SuscriptionStartDate");
 
                     b.HasKey("Id");
 

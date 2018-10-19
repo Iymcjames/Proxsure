@@ -1,7 +1,17 @@
+import { Suscription } from './../Admin/Suscription/suscription.model';
 import { UserService } from './../shared/user.service';
 import { Component, OnInit } from '@angular/core';
-import { NgForm, NgModel, FormControl, Validators, FormGroup, FormGroupDirective, AbstractControl, FormBuilder } from '@angular/forms';
-import { User} from '../shared/user.model';
+import {
+  NgForm,
+  NgModel,
+  FormControl,
+  Validators,
+  FormGroup,
+  FormGroupDirective,
+  AbstractControl,
+  FormBuilder
+} from '@angular/forms';
+import { User } from '../shared/user.model';
 
 import { ErrorStateMatcher } from '@angular/material/core';
 import { PasswordValidation } from '../shared/password_validator.model';
@@ -16,30 +26,22 @@ export class SignUpComponent implements OnInit {
   newSignUpUser: User;
   confirmationMessage: string;
 
-  suscriptionDropDown: SuscriptionDropDown[] = [
-    {value: 1, display: 'Basic'},
-    {value: 2, display: 'Intermediate'},
-    {value: 3, display: 'Professional'},
-  ];
-
-
   constructor(public fb: FormBuilder, public userService: UserService) {
-    this.signUpForm = this.fb.group({
-      firstName: ['', Validators.required],
-      lastName : ['', Validators.required],
-     username : ['', Validators.required],
-      email : ['', [Validators.required, Validators.email]],
-      password : ['', [Validators.required, Validators.minLength(6)]],
-      reTypePassword : ['', [Validators.required]],
-      suscriptionId: ['']
-     },
-     {
-      validator: PasswordValidation.MatchPassword
-     }
-     );
-
+    this.signUpForm = this.fb.group(
+      {
+        firstName: ['', Validators.required],
+        lastName: ['', Validators.required],
+        username: ['', Validators.required],
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', [Validators.required, Validators.minLength(6)]],
+        reTypePassword: ['', [Validators.required]],
+        suscriptionId: ['']
+      },
+      {
+        validator: PasswordValidation.MatchPassword
+      }
+    );
   }
-
 
   ngOnInit() {
     this.newSignUpUser = new User();
@@ -49,25 +51,29 @@ export class SignUpComponent implements OnInit {
 
   OnSubmit() {
     console.log(this.signUpForm.value);
-this.userService.createUser(this.signUpForm.value);
+    this.userService.createUser(this.signUpForm.value);
   }
 
   resetForm(form?: NgForm) {
-if (form) {
-   form.reset();
-}
-this.newSignUpUser = null;
+    if (form) {
+      form.reset();
+    }
+    this.newSignUpUser = null;
   }
 }
 
-export interface SuscriptionDropDown {
-  value: number;
-  display: string;
-}
+
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
+  isErrorState(
+    control: FormControl | null,
+    form: FormGroupDirective | NgForm | null
+  ): boolean {
     const isSubmitted = form && form.submitted;
-    return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
+    return !!(
+      control &&
+      control.invalid &&
+      (control.dirty || control.touched || isSubmitted)
+    );
   }
 }

@@ -1,0 +1,14 @@
+using System;
+
+namespace Proxsure_API.Models.Suscription {
+    public class SuscriptionDTO {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public decimal Price { get; set; }
+
+        public string Duration { get; set; }
+        public DateTime SuscriptionStartDate { get; set; }
+
+        public DateTime SuscriptionExpirationDate { get; set; }
+    }
+}

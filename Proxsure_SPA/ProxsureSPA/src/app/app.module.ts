@@ -15,6 +15,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import { AuthGuardService } from './shared/auth-guard.service';
 import { AuthService } from './shared/auth.service';
+import { SuscriptionComponent } from './Admin/Suscription/suscription/suscription.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { AuthService } from './shared/auth.service';
     NavBarComponent,
     SignUpComponent,
     NavBarComponent,
-    AppComponent
+    AppComponent,
+    SuscriptionComponent
   ],
   imports: [
     BrowserAnimationsModule,
