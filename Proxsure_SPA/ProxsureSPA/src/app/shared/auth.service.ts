@@ -9,4 +9,4 @@ export class AuthService {
 }
 
 
-export const apiRootUrl = 'https://localhost/5001/';
+export const apiRootUrl = 'http://localhost:5000/';

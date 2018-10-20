@@ -56,8 +56,8 @@ suscriptions: Suscription[];
 
   GetSuscriptions() {
     this.suscriptionService.getSuscriptions()
-    .subscribe((response) => {
-      this.suscriptions = <Suscription[]>response;
+    .subscribe((response: Suscription[]) => {
+      this.suscriptions = response;
     });
   }
 
