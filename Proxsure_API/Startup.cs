@@ -12,7 +12,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Proxsure_API.Models.Context;
+using AutoMapper;
 using Proxsure_API.Models.SuscriptionModels;
+using Proxsure_API.Models.Users;
 
 namespace Proxsure_API {
     public class Startup {
@@ -24,9 +26,12 @@ namespace Proxsure_API {
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices (IServiceCollection services) {
+            services.AddAutoMapper();
             services.AddDbContext<ApplicationDbContext> (options => options.UseSqlServer (Configuration.GetConnectionString ("userDB")));
 
             services.AddScoped<ISuscriptionRepository, SuscriptionRepository> ();
+
+
 
             services.AddCors ();
 

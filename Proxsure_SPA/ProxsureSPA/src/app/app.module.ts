@@ -1,3 +1,4 @@
+import { MaterialModule } from './material/material.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -16,6 +17,12 @@ import {MatButtonModule} from '@angular/material/button';
 import { AuthGuardService } from './shared/auth-guard.service';
 import { AuthService } from './shared/auth.service';
 import { SuscriptionComponent } from './Admin/Suscription/suscription/suscription.component';
+import { ProfilePictureComponent } from './shared/Users/profile-picture/profile-picture.component';
+import { MainNavComponent } from './shared/main-nav/main-nav.component';
+import { LayoutModule } from '@angular/cdk/layout';
+import { MatToolbarModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
+import { HomeLayoutComponent } from './shared/home-layout/home-layout.component';
+import { DashboardLayoutComponent } from './shared/dashboard-layout/dashboard-layout.component';
 
 
 @NgModule({
@@ -25,7 +32,11 @@ import { SuscriptionComponent } from './Admin/Suscription/suscription/suscriptio
     SignUpComponent,
     NavBarComponent,
     AppComponent,
-    SuscriptionComponent
+    SuscriptionComponent,
+    ProfilePictureComponent,
+    MainNavComponent,
+    HomeLayoutComponent,
+    DashboardLayoutComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -33,12 +44,10 @@ import { SuscriptionComponent } from './Admin/Suscription/suscription/suscriptio
     FormsModule,
     AppRoutingModule,
     BrowserModule,
-    MatSelectModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
+    MaterialModule,
     HttpClientModule,
     ReactiveFormsModule,
+    LayoutModule,
   ],
   providers: [AuthGuardService, AuthService],
   bootstrap: [AppComponent]

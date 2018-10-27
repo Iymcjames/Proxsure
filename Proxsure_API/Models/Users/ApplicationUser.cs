@@ -13,11 +13,13 @@ namespace Proxsure_API.Models.Users
 
         public DateTime Sus_StartDate { get; set; }
 
-        public DateTime Sus_ExpirationDate {
-            get {
-                return Suscription.Duration.ToLower () == "monthly" ? Sus_StartDate.AddMonths (1) : Sus_StartDate.AddYears (1);
-            }
+        public DateTime Sus_ExpirationDate {get;set;
         }
+        //  public DateTime Sus_ExpirationDate {
+        //     get {
+        //         return Suscription.Duration.ToLower () == "monthly" ? Sus_StartDate.AddMonths (1) : Sus_StartDate.AddYears (1);
+        //     }
+        // }
         public string profileUrl { get; set; }
     }
 }

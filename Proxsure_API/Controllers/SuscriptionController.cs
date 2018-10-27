@@ -19,25 +19,26 @@ namespace Proxsure_API.Controllers {
         // GET api/suscription
         [HttpGet ("")]
         public async Task<IActionResult> GetSuscriptions () {
-            return Ok (await suscriptionRepository.GetAllSuscriptions ());
+            var sus = await suscriptionRepository.GetAllSuscriptions ();
+            return Ok (sus);
         }
 
-        // GET api/suscription/5
-        [HttpGet ("{id}")]
-        public ActionResult<string> GetSuscriptionById (int id) {
-            return "value" + id;
-        }
+    //     // GET api/suscription/5
+    //     [HttpGet ("{id}")]
+    //     public ActionResult<string> GetSuscriptionById (int id) {
+    //         return "value" + id;
+    //     }
 
-        // POST api/suscription
-        [HttpPost ("")]
-        public void Post ([FromBody] string value) { }
+    //     // POST api/suscription
+    //     [HttpPost ("")]
+    //     public void Post ([FromBody] string value) { }
 
-        // PUT api/suscription/5
-        [HttpPut ("{id}")]
-        public void Put (int id, [FromBody] string value) { }
+    //     // PUT api/suscription/5
+    //     [HttpPut ("{id}")]
+    //     public void Put (int id, [FromBody] string value) { }
 
-        // DELETE api/suscription/5
-        [HttpDelete ("{id}")]
-        public void DeleteById (int id) { }
+    //     // DELETE api/suscription/5
+    //     [HttpDelete ("{id}")]
+    //     public void DeleteById (int id) { }
     }
 }

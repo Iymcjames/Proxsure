@@ -10,7 +10,7 @@ export class SuscriptionService {
   constructor(public http: HttpClient) {
   }
 
-  getSuscriptions() {
+  getAllSuscriptions() {
     return this.http.get(apiRootUrl + 'api/suscription');
   }
 }

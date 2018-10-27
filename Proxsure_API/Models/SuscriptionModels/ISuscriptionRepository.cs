@@ -6,8 +6,8 @@ namespace Proxsure_API.Models.SuscriptionModels
     public interface ISuscriptionRepository
     {
          
-         Suscription AddSuscription (Suscription suscription);
-        Task<List<Suscription>> GetAllSuscriptions ();
-        Task<Suscription> GetSuscription (int id);
+         Task<SuscriptionDTO> AddSuscription (Suscription suscription);
+        Task<List<SuscriptionDTO>> GetAllSuscriptions ();
+        Task<SuscriptionDTO> GetSuscription (int id);
     }
 }

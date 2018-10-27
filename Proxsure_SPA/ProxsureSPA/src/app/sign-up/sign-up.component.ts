@@ -1,6 +1,6 @@
 import { SuscriptionService } from './../Admin/Suscription/suscription.service';
 import { Suscription } from './../Admin/Suscription/suscription.model';
-import { UserService } from './../shared/user.service';
+import { UserService } from './../shared/Users/user.service';
 import { Component, OnInit } from '@angular/core';
 import {
   NgForm,
@@ -12,12 +12,13 @@ import {
   AbstractControl,
   FormBuilder
 } from '@angular/forms';
-import { User } from '../shared/user.model';
+import { User } from '../shared/Users/user.model';
 
 import { ErrorStateMatcher } from '@angular/material/core';
 import { PasswordValidation } from '../shared/password_validator.model';
 
 @Component({
+  // tslint:disable-next-line:component-selector
   selector: 'sign-up',
   templateUrl: './sign-up.component.html',
   styleUrls: ['./sign-up.component.scss']
@@ -26,7 +27,9 @@ export class SignUpComponent implements OnInit {
   signUpForm: FormGroup;
   newSignUpUser: User;
   confirmationMessage: string;
-suscriptions: Suscription[];
+  suscriptions: Suscription[];
+
+
   constructor(
     public fb: FormBuilder,
     public userService: UserService,
@@ -41,7 +44,7 @@ suscriptions: Suscription[];
         email: ['', [Validators.required, Validators.email]],
         password: ['', [Validators.required, Validators.minLength(6)]],
         reTypePassword: ['', [Validators.required]],
-        suscriptionId: ['']
+        suscriptionId: ['', [Validators.required]]
       },
       {
         validator: PasswordValidation.MatchPassword
@@ -55,10 +58,11 @@ suscriptions: Suscription[];
   }
 
   GetSuscriptions() {
-    this.suscriptionService.getSuscriptions()
-    .subscribe((response: Suscription[]) => {
-      this.suscriptions = response;
-    });
+    this.suscriptionService
+      .getAllSuscriptions()
+      .subscribe((response: Suscription[]) => {
+        this.suscriptions = response;
+      });
   }
 
   OnSubmit() {
@@ -72,6 +76,7 @@ suscriptions: Suscription[];
     }
     this.newSignUpUser = null;
   }
+
 }
 
 export class MyErrorStateMatcher implements ErrorStateMatcher {

@@ -23,7 +23,9 @@
     <mat-form-field>
       <input matInput placeholder="Re-Type Password" formControlName="reTypePassword" type="password" required>
       <mat-error *ngIf="signUpForm.controls.reTypePassword.errors?.MatchPassword">Password does not match</mat-error>
-      </mat-form-field>
+    </mat-form-field>
+
+
 
     <mat-form-field>
       <mat-select placeholder="Suscription Type" formControlName="suscriptionId">
@@ -32,7 +34,7 @@
     </mat-form-field>
 
     <div>
-        <button mat-stroked-button type="submit" [disabled]="!signUpForm.valid">Sign Up</button>
+      <button mat-stroked-button type="submit" [disabled]="!signUpForm.valid">Sign Up</button>
     </div>
   </form>
 </div>
