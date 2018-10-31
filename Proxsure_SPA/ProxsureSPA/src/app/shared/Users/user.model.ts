@@ -1,13 +1,28 @@
 import { Suscription } from '../../Admin/Suscription/suscription.model';
 
-export class User {
+// export class SignUpUser implements User {
+//   firstName: string;
+//   lastName: string;
+//   username: string;
+//   email: string;
+//   suscriptionId: number;
+//   profilePictureUrl: string;
+//   suscriptionStartDate: Date;
+//   suscriptionExpirydate: Date;
+// }
+
+export interface UserData {
   firstName: string;
   lastName: string;
   username: string;
   email: string;
-  password: string;
   suscriptionId: number;
-  profilePicture: File;
-  suscriptionStartDate: Date;
-  suscriptionExpirydate: Date;
+  profilePictureUrl: string;
 }
+
+export class UserViewModel {
+  user: UserData;
+  password: string;
+}
+
+

@@ -1,40 +1,41 @@
-import { apiRootUrl } from 'src/app/shared/auth.service';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User } from './user.model';
-import { FormGroup } from '@angular/forms';
+import {  UserViewModel, UserData } from './user.model';
 import { Observable } from 'rxjs';
-import { Profile } from 'selenium-webdriver/firefox';
-import { map } from 'rxjs/operators';
+import { apiRootUrl } from '../Auth/auth.service';
+import { User } from 'oidc-client';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  user: User;
-  apiRootUrl = apiRootUrl;
+  private user: User;
+  userVM: UserViewModel;
   constructor(public httpClient: HttpClient) {}
 
-  createUser(userValue: any) {
-    this.user = {
+  createUser(userValue: any): Observable<any> {
+    let user: UserData;
+    user = {
       email: userValue.email,
       firstName: userValue.firstName,
       lastName: userValue.lastName,
       username: userValue.username,
-      password: userValue.password,
-      suscriptionStartDate: new Date(),
-      suscriptionExpirydate: null,
       suscriptionId: userValue.suscriptionId,
-      profilePicture: null
+      profilePictureUrl: ''
     };
-
+    this.userVM = {
+      user: user,
+      password: userValue.password
+    };
     // const userProfile = new FormData();
     // userProfile.append('data', 'this.user');
     // userProfile.append('profilePicture', picToUpload);
-     this.httpClient.post(apiRootUrl + 'api/signup', this.user)
-    .subscribe((result) => {
-console.log(result);
-    });
+    const headers = new Headers();
+    headers.append(
+      'Authorization',
+      'Bearer' + this.user.access_token
+    );
+    return this.httpClient.post(apiRootUrl + 'api/user', this.userVM, {header : headers});
   }
 
   getAllSuscriptions() {

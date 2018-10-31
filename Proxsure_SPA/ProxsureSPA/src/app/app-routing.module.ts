@@ -1,3 +1,4 @@
+import { AuthGuardService } from './shared/Auth/auth-guard.service';
 import { DashboardLayoutComponent } from './shared/dashboard-layout/dashboard-layout.component';
 import { HomeLayoutComponent } from './shared/home-layout/home-layout.component';
 import { NgModule } from '@angular/core';
@@ -26,7 +27,7 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardLayoutComponent, data: {title: 'dashboard'},
     children: [
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
-      { path: 'dashboard', component: DashboardComponent }
+      { path: 'dashboard', component: DashboardComponent, canActivate: [AuthGuardService] }
     ]
   }
 ];

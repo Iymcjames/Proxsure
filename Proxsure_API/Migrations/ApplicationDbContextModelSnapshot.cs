@@ -85,9 +85,11 @@ namespace Proxsure_API.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.Property<string>("LoginProvider");
+                    b.Property<string>("LoginProvider")
+                        .HasMaxLength(128);
 
-                    b.Property<string>("ProviderKey");
+                    b.Property<string>("ProviderKey")
+                        .HasMaxLength(128);
 
                     b.Property<string>("ProviderDisplayName");
 
@@ -118,9 +120,11 @@ namespace Proxsure_API.Migrations
                 {
                     b.Property<string>("UserId");
 
-                    b.Property<string>("LoginProvider");
+                    b.Property<string>("LoginProvider")
+                        .HasMaxLength(128);
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .HasMaxLength(128);
 
                     b.Property<string>("Value");
 
@@ -161,6 +165,10 @@ namespace Proxsure_API.Migrations
 
                     b.Property<bool>("EmailConfirmed");
 
+                    b.Property<string>("FirstName");
+
+                    b.Property<string>("LastName");
+
                     b.Property<bool>("LockoutEnabled");
 
                     b.Property<DateTimeOffset?>("LockoutEnd");
@@ -177,22 +185,20 @@ namespace Proxsure_API.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed");
 
+                    b.Property<string>("ProfilePictureUrl");
+
                     b.Property<string>("SecurityStamp");
 
-                    b.Property<DateTime>("Sus_StartDate");
+                    b.Property<DateTime>("SuscriptionExpirydate");
+
+                    b.Property<int>("SuscriptionId");
+
+                    b.Property<DateTime>("SuscriptionStartDate");
 
                     b.Property<bool>("TwoFactorEnabled");
 
                     b.Property<string>("UserName")
                         .HasMaxLength(256);
-
-                    b.Property<string>("firstName");
-
-                    b.Property<string>("lastName");
-
-                    b.Property<string>("profileUrl");
-
-                    b.Property<int>("suscriptionId");
 
                     b.HasKey("Id");
 
@@ -204,7 +210,7 @@ namespace Proxsure_API.Migrations
                         .HasName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
-                    b.HasIndex("suscriptionId");
+                    b.HasIndex("SuscriptionId");
 
                     b.ToTable("User");
                 });
@@ -258,7 +264,7 @@ namespace Proxsure_API.Migrations
                 {
                     b.HasOne("Proxsure_API.Models.SuscriptionModels.Suscription", "Suscription")
                         .WithMany()
-                        .HasForeignKey("suscriptionId")
+                        .HasForeignKey("SuscriptionId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618
