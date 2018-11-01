@@ -45,7 +45,7 @@ namespace Proxsure_API {
                     options.Authority = "http://localhost:5000";
                     options.RequireHttpsMetadata = false;
 
-                    options.ApiName = "Proxsure_API1";
+                    options.ApiName = "Proxsure_API";
                 });
 
             services.AddCors ();

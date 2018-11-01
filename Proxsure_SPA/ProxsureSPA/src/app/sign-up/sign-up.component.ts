@@ -13,7 +13,7 @@ import {
   AbstractControl,
   FormBuilder
 } from '@angular/forms';
-import { User } from '../shared/Users/user.model';
+import { UserData } from '../shared/Users/user.model';
 
 import { ErrorStateMatcher } from '@angular/material/core';
 import { PasswordValidation } from '../shared/Auth/password_validator.model';
@@ -26,7 +26,7 @@ import { PasswordValidation } from '../shared/Auth/password_validator.model';
 })
 export class SignUpComponent implements OnInit {
   signUpForm: FormGroup;
-  newSignUpUser: User;
+  newSignUpUser: UserData;
   confirmationMessage: string;
   suscriptions: Suscription[];
   @ViewChild(FormGroupDirective)

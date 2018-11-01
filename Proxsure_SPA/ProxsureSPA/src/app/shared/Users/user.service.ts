@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {  UserViewModel, UserData } from './user.model';
 import { Observable } from 'rxjs';
 import { apiRootUrl } from '../Auth/auth.service';
@@ -30,12 +30,12 @@ export class UserService {
     // const userProfile = new FormData();
     // userProfile.append('data', 'this.user');
     // userProfile.append('profilePicture', picToUpload);
-    const headers = new Headers();
-    headers.append(
+    const header = new HttpHeaders();
+    header.append(
       'Authorization',
       'Bearer' + this.user.access_token
     );
-    return this.httpClient.post(apiRootUrl + 'api/user', this.userVM, {header : headers});
+    return this.httpClient.post(apiRootUrl + 'api/user', this.userVM, {headers: header});
   }
 
   getAllSuscriptions() {
