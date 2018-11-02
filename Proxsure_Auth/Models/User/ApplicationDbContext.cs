@@ -3,9 +3,8 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Proxsure_Auth.Models.SuscriptionModels;
 using Proxsure_Auth.Models.User;
-
 namespace Proxsure_Auth.Models.User {
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser> {
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string> {
         public ApplicationDbContext (DbContextOptions<ApplicationDbContext> options) : base (options) { }
          public DbSet<Suscription> Suscriptions { get; set; }
 

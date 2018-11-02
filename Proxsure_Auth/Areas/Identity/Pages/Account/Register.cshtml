@@ -1,7 +1,7 @@
 @page
 @model RegisterModel
 @{
-    ViewData["Title"] = "Register";
+    ViewData["Title"] = "Join In";
 }
 
 <h2>@ViewData["Title"]</h2>
@@ -12,6 +12,16 @@
             <h4>Create a new account.</h4>
             <hr />
             <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="newUser.FirstName"></label>
+                <input asp-for="newUser.FirstName" class="form-control" />
+                <span asp-validation-for="newUser.FirstName" class="text-danger"></span>
+            </div>
+              <div class="form-group">
+                <label asp-for="newUser.LastName"></label>
+                <input asp-for="newUser.LastName" class="form-control" />
+                <span asp-validation-for="newUser.LastName" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <label asp-for="newUser.Email"></label>
                 <input asp-for="newUser.Email" class="form-control" />
@@ -26,6 +36,13 @@
                 <label asp-for="newUser.ConfirmPassword"></label>
                 <input asp-for="newUser.ConfirmPassword" class="form-control" />
                 <span asp-validation-for="newUser.ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                 <select asp-for="newUser.SuscriptionId" 
+                         asp-items="@Model.newUser.Suscriptions">
+                    <option>Suscription Type</option>
+                 </select>
+                <span asp-validation-for="newUser.SuscriptionId" class="text-danger"></span>
             </div>
             <button type="submit" class="btn btn-default">Register</button>
         </form>
